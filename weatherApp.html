@@ -9,7 +9,20 @@
         $(document).ready(function () {
             console.log("ready!");
         
+        var apiKey = '7be341ddd5b59ee44a44b57480ada5f5';
         var button = document.getElementById("submitButton");
+        
+
+        button.addEventListener('click', function() {
+            var searchByCity = document.getElementById("searchByCity").value;
+            var searchByZip = document.getElementById("searchByZip").value;
+            $.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchByCity}?zip=${searchByZip}&appid=${apiKey}`, function (data) {
+                console.log(data);
+                
+            }) 
+
+            
+        })
         
         
     }); // <--- end of document readiness check
@@ -28,13 +41,17 @@
 <br>
     <div>
         <div class="form-group">
-            <input type="text" class="form" id="searchBy" aria-describedby="" placeholder="Search By">
+            <input type="text" class="form" id="searchByCity" aria-describedby="" placeholder="Search By City">
+            <input type="text" class="form" id="searchByZip" aria-describedby="" placeholder="Search By Zip">
             
         </div>
         <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>   
     </div>
 
 <br>
+    <div id="getData">
+
+    </div>
 
     <!--- Area for movie cards --->
     <div id="movieBody">
