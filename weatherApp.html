@@ -10,18 +10,30 @@
             console.log("ready!");
         
         var apiKey = '7be341ddd5b59ee44a44b57480ada5f5';
-        var button = document.getElementById("submitButton");
+        var cButton = document.getElementById("cityButton");
+        var zButton = document.getElementById("zipButton");
         
 
-        button.addEventListener('click', function() {
+        cButton.addEventListener('click', function() {
             var searchByCity = document.getElementById("searchByCity").value;
             var searchByZip = document.getElementById("searchByZip").value;
-            $.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchByCity}?zip=${searchByZip}&appid=${apiKey}`, function (data) {
-                console.log(data);
-                
-            }) 
 
-            
+            $.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchByCity}&appid=${apiKey}`, function (data) {
+                console.log(data);
+                console.log(searchByCity);
+                
+            })    
+        })
+
+        zButton.addEventListener('click', function() {
+            var searchByCity = document.getElementById("searchByCity").value;
+            var searchByZip = document.getElementById("searchByZip").value;
+
+            $.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchByZip}&appid=${apiKey}`, function (data) {
+                console.log(data);
+                console.log(searchByZip);
+                
+            })    
         })
         
         
@@ -45,7 +57,8 @@
             <input type="text" class="form" id="searchByZip" aria-describedby="" placeholder="Search By Zip">
             
         </div>
-        <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>   
+        <button type="submit" class="btn btn-primary" id="cityButton">Search By City</button>   
+        <button type="submit" class="btn btn-primary" id="zipButton">Search By Zip</button> 
     </div>
 
 <br>
