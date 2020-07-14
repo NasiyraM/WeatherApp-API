@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <!-- External CSS Page-->
+    <link rel="stylesheet" href="weather.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
@@ -16,6 +17,7 @@
         $(document).ready(function () {
             console.log("ready!");
         
+
         var apiKey = '7be341ddd5b59ee44a44b57480ada5f5';
         var cButton = document.getElementById("cityButton");
         var zButton = document.getElementById("zipButton");
@@ -94,9 +96,10 @@
         </a> 
     </nav>
 
+
     <!-- Weather Info -->
-    <div class="container">
-        <div class="jumbotron">
+    <div>
+        <div class="jumbotron boxSize danger-bg">
             <h1 class="display-4" id="citySelection"></h1>
             <div id="dumpInfo"></div>
             
@@ -109,7 +112,7 @@
                     <input type="number" class="form" id="searchByZip" aria-describedby="" placeholder="Search By Zip">
                 </div>
                 <button type="submit" class="btn btn-primary" id="cityButton">Search By City</button>   
-                <button type="submit" class="btn btn-primary" id="zipButton">Search By Zip</button>
+                <button type="submit" class="btn btn-primary btnBox" id="zipButton" margin-auto >Search By Zip</button>
                 
             </div>
         
