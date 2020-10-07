@@ -1,0 +1,28 @@
+
+/* CSS Stylesheet */
+
+
+body {
+    background-image: url("img/weatherMix.jpg");
+    background-color:cornflowerblue;
+}
+
+
+.jumbotron .container {
+    margin-top: 100px;
+}
+
+
+.btnBox {
+    margin-left: 45px;
+    
+}
+
+.boxSize {  
+    height: 350px;
+    width: 500px;
+    justify-content: center;
+    margin top: 1000px;
+    padding left: 500px;
+    margin: auto; 
+} 
